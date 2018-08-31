@@ -30,6 +30,11 @@ public class EmployeedaoImpl implements EmployeeDao {
 		
 		EmployeeEntity employee = (EmployeeEntity) sessionfactory.getCurrentSession().load(EmployeeEntity.class,employeeId);
 		
+		if(null!=employee) {
+			
+			this.sessionfactory.getCurrentSession().delete(employee);
+		}
+		
 		
 	}
 
